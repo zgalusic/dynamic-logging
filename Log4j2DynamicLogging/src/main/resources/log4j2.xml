@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" packages="org.apache.logging.log4j.core">
+
+    <!-- Define Appenders -->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <RollingFile name="File" fileName="logs/app.log" filePattern="logs/app-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <!-- Define Loggers -->
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+        <Logger name="com.superunknown" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+    </Loggers>
+</Configuration>

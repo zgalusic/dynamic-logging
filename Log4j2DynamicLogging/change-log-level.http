@@ -1,0 +1,11 @@
+# curl -X PUT "http://localhost:8080/loggers?logger=com.superunknown&level=DEBUG"
+PUT http://localhost:8080/loggers?logger=com.superunknown&level=DEBUG
+###
+PUT http://localhost:8080/loggers?logger=com.superunknown&level=INFO
+###
+PUT http://localhost:8080/loggers?logger=com.superunknown&level=WARN
+###
+PUT http://localhost:8080/loggers?logger=com.superunknown&level=ERROR
+###
+GET http://localhost:8080/loggers?logger=com.superunknown
+
